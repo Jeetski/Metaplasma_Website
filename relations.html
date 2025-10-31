@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Relations — Metaplasma</title>
+    <meta name="description" content="Metaplasma Relation Catalog" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="public/icon.ico" />
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+    <header class="site-header" id="top">
+      <div class="brand">
+        <img class="brand-mark" src="public/icon.ico" alt="Metaplasma mark" />
+        <h1 class="logo" aria-label="Metaplasma">METAPLASMA</h1>
+      </div>
+      <p class="tagline">A Data-Driven Emergent Symbolic Systems Engine</p>
+      <nav class="nav">
+        <a href="index.html">home</a>
+        <a href="engine.html">engine</a>
+        <a href="relations.html" class="active">relations</a>
+        <a href="start.html">start</a>
+        <a href="docs.html">docs</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="panel">
+        <h2>Relation Catalog</h2>
+        <p>
+          Metaplasma ships with a pragmatic preposition set (v1) spanning spatial, temporal,
+          structural, causal, and agency domains. Each relation is a Sigil (<code>type: relation</code>)
+          with metadata: directionality, symmetry, inverse, arity, roles, and category.
+        </p>
+        <ul class="links">
+          <li><a href="../Docs/relation_catalog_v1.md">Open catalog (Markdown)</a></li>
+        </ul>
+      </section>
+
+      <section class="panel" id="spatial_topology">
+        <h2>Spatial Topology</h2>
+        <ul class="bullets">
+          <li><code>in</code> ⇄ <code>contains</code>; <code>on</code> ⇄ <code>supports</code>; <code>at</code></li>
+          <li><code>under</code> ⇄ <code>above</code>; <code>inside</code> ⇄ <code>around</code>; <code>outside</code> ⇄ <code>surrounds</code></li>
+          <li><code>between</code> (arity 3: subject, bound_a, bound_b); <code>among</code> (member,set)</li>
+          <li><code>adjacent_to</code> (sym); <code>near</code> (sym); <code>far_from</code> (sym)</li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="spatial_motion">
+        <h2>Spatial Motion / Path</h2>
+        <ul class="bullets">
+          <li><code>into</code> ⇄ <code>out_of</code>; <code>onto</code> ⇄ <code>off</code></li>
+          <li><code>through</code> ⇄ <code>along</code>; <code>across</code> ⇄ <code>spans</code></li>
+          <li><code>toward</code> ⇄ <code>away_from</code>; <code>to</code> ⇄ <code>from</code></li>
+          <li><code>past</code>; <code>via</code></li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="orientation">
+        <h2>Orientation / Alignment</h2>
+        <ul class="bullets">
+          <li><code>aligned_with</code> (sym); <code>parallel_to</code> (sym); <code>perpendicular_to</code> (sym)</li>
+          <li><code>facing</code> ⇄ <code>faced_by</code>; <code>left_of</code> ⇄ <code>right_of</code>; <code>ahead_of</code> ⇄ <code>behind</code></li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="structure">
+        <h2>Structural (Part–Whole, Sets)</h2>
+        <ul class="bullets">
+          <li><code>part_of</code> ⇄ <code>has_part</code>; <code>member_of</code> ⇄ <code>has_member</code></li>
+          <li><code>component_of</code> ⇄ <code>has_component</code>; <code>made_of</code> ⇄ <code>has_material</code></li>
+          <li><code>subset_of</code> ⇄ <code>superset_of</code>; <code>version_of</code> ⇄ <code>has_version</code></li>
+          <li><code>variant_of</code> ⇄ <code>has_variant</code>; <code>container_of</code> ⇄ <code>contained_by</code></li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="control">
+        <h2>Ownership / Control</h2>
+        <ul class="bullets">
+          <li><code>owned_by</code> ⇄ <code>owns</code>; <code>controlled_by</code> ⇄ <code>controls</code></li>
+          <li><code>responsible_to</code> ⇄ <code>responsible_for</code>; <code>governed_by</code> ⇄ <code>governs</code></li>
+          <li><code>assigned_to</code> ⇄ <code>assigned_by</code></li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="association">
+        <h2>Association / Attachment / Linkage</h2>
+        <ul class="bullets">
+          <li><code>with</code>; <code>without</code>; <code>connected_to</code> (sym)</li>
+          <li><code>attached_to</code> ⇄ <code>detached_from</code>; <code>bound_to</code> ⇄ <code>unbound_from</code></li>
+          <li><code>linked_to</code> (sym); <code>related_to</code> (sym)</li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="causality">
+        <h2>Causality / Process</h2>
+        <ul class="bullets">
+          <li><code>causes</code> ⇄ <code>caused_by</code>; <code>enables</code> ⇄ <code>enabled_by</code>; <code>prevents</code> ⇄ <code>prevented_by</code></li>
+          <li><code>results_in</code> ⇄ <code>result_of</code>; <code>leads_to</code> ⇄ <code>led_from</code></li>
+          <li><code>transforms_to</code> ⇄ <code>transforms_from</code>; <code>depends_on</code> ⇄ <code>required_by</code></li>
+          <li><code>uses</code> ⇄ <code>used_by</code></li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="temporal">
+        <h2>Temporal</h2>
+        <ul class="bullets">
+          <li><code>before</code> ⇄ <code>after</code>; <code>during</code> (sym)</li>
+          <li><code>at_time</code>; <code>since</code> ⇄ <code>until</code></li>
+          <li><code>starts_at</code> ⇄ <code>started_by</code>; <code>ends_at</code> ⇄ <code>ended_by</code></li>
+          <li><code>overlaps_in_time</code> (sym); <code>concurrent_with</code> (sym)</li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="agency">
+        <h2>Role / Agency / Means</h2>
+        <ul class="bullets">
+          <li><code>by_agent</code>; <code>as</code></li>
+          <li><code>with_instrument</code> ⇄ <code>instrument_of</code>; <code>via_method</code> ⇄ <code>method_of</code></li>
+          <li><code>for_benefit_of</code> ⇄ <code>benefits_from</code>; <code>on_behalf_of</code> ⇄ <code>represented_by</code></li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="purpose">
+        <h2>Purpose / Function</h2>
+        <ul class="bullets">
+          <li><code>for</code>; <code>in_order_to</code> ⇄ <code>purpose_of</code></li>
+          <li><code>used_for</code> ⇄ <code>use_of</code>; <code>capable_of</code> ⇄ <code>capability_of</code></li>
+          <li><code>suitable_for</code> ⇄ <code>suitability_of</code>; <code>about</code> ⇄ <code>topic_of</code></li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="similarity">
+        <h2>Similarity / Comparison</h2>
+        <ul class="bullets">
+          <li><code>similar_to</code> (sym); <code>equivalent_to</code> (sym); <code>same_as</code> (sym); <code>different_from</code> (sym); <code>analog_to</code> (sym)</li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="information">
+        <h2>Communication / Information</h2>
+        <ul class="bullets">
+          <li><code>about</code> ⇄ <code>topic_of</code>; <code>according_to</code> ⇄ <code>source_of_claim</code></li>
+          <li><code>from_source</code> ⇄ <code>source_of</code>; <code>to_audience</code> ⇄ <code>audience_of</code></li>
+          <li><code>via_channel</code> ⇄ <code>channel_of</code>; <code>refers_to</code> ⇄ <code>referenced_by</code>; <code>defined_in</code> ⇄ <code>defines</code></li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="derivation">
+        <h2>Derivation / Transformation</h2>
+        <ul class="bullets">
+          <li><code>derived_from</code> ⇄ <code>derives_to</code>; <code>based_on</code> ⇄ <code>base_of</code></li>
+          <li><code>converted_from</code> ⇄ <code>converts_to</code>; <code>mapped_to</code> ⇄ <code>mapped_from</code></li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="state">
+        <h2>State / Condition / Constraint</h2>
+        <ul class="bullets">
+          <li><code>in_state</code> ⇄ <code>state_of</code>; <code>under_condition</code> ⇄ <code>condition_of</code></li>
+          <li><code>subject_to</code> ⇄ <code>governs_condition</code>; <code>compatible_with</code> (sym); <code>conflicts_with</code> (sym)</li>
+          <li><code>allowed_by</code> ⇄ <code>allows</code>; <code>prohibited_by</code> ⇄ <code>prohibits</code></li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+
+      <section class="panel" id="identity">
+        <h2>Identity / Taxonomy</h2>
+        <ul class="bullets">
+          <li><code>is_a</code> ⇄ <code>instance_of</code>; <code>alias_of</code> (sym); <code>equivalent_to</code> (sym)</li>
+          <li><code>named_by</code> ⇄ <code>names</code></li>
+        </ul>
+        <a class="back" href="#top">back to top</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="divider" aria-hidden="true">§§§</div>
+      <p class="credit">Hivemind Studio — David Cody</p>
+      <p>Metaplasma — built from symbols, shaped by relations.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Engine — Metaplasma</title>
+    <meta name="description" content="Metaplasma Engine Overview" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="public/icon.ico" />
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="brand">
+        <img class="brand-mark" src="public/icon.ico" alt="Metaplasma mark" />
+        <h1 class="logo" aria-label="Metaplasma">METAPLASMA</h1>
+      </div>
+      <p class="tagline">A Data-Driven Emergent Symbolic Systems Engine</p>
+      <nav class="nav">
+        <a href="index.html">home</a>
+        <a href="engine.html" class="active">engine</a>
+        <a href="relations.html">relations</a>
+        <a href="start.html">start</a>
+        <a href="docs.html">docs</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="panel">
+        <h2>Core Primitives</h2>
+        <ul class="bullets">
+          <li><b>Sigils</b>: canonical symbolic units, stored as YAML.</li>
+          <li><b>Glyphs</b>: properties of Sigils; values can reference other Sigils via <code>@sigil[:prop...]</code>.</li>
+          <li><b>Relations</b>: preposition-like connectors (e.g., <code>in</code>, <code>part_of</code>, <code>causes</code>), themselves Sigils.</li>
+          <li><b>Relation Instances</b>: reified events with roles, metadata, and identity.</li>
+          <li><b>Pulses</b>: async waves that propagate along relations, executing relation scripts.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Structural Layers</h2>
+        <ul class="bullets">
+          <li><b>Hypergraph</b>: in-memory adjacency of Sigils and relations.</li>
+          <li><b>Metagraph</b>: metadata (file paths, timestamps, authorship, schema).</li>
+          <li><b>Hypermatrix</b>: semantic coordinates enabling similarity and clustering.</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Pulses</h2>
+        <p>
+          Pulses propagate wave-by-wave through outgoing relations. Relation scripts may update
+          state, select next targets, or emit new pulses. A pulse never revisits the same Sigil twice.
+        </p>
+        <pre class="console">
+> emit @origin payload:{ key: value }
+> await wave // relation scripts handle edge-local logic
+> continue   // next frontier expands
+        </pre>
+      </section>
+
+      <section class="panel">
+        <h2>Files & Directories</h2>
+        <ul class="bullets">
+          <li><code>ROOT/*</code>: engine defaults (read-only).</li>
+          <li><code>User/*</code>: project content (overrides & writes).</li>
+          <li><code>Sigils/</code>, <code>Relations/</code>, <code>Scripts/</code>, <code>Commands/</code>, <code>Modules/</code></li>
+          <li><code>ROOT/Utilities/</code>: Windows tools (<code>.exe/.bat/.cmd/.ps1/.py</code>).</li>
+          <li><code>User/Logs/</code>: runtime pulse and change logs.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="divider" aria-hidden="true">§§§</div>
+      <p class="credit">Hivemind Studio — David Cody</p>
+      <p>Metaplasma — built from symbols, shaped by relations.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Getting Started — Metaplasma</title>
+    <meta name="description" content="Metaplasma Getting Started" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="public/icon.ico" />
+  </head>
+  <body>
+    <div class="scanlines" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="brand">
+        <img class="brand-mark" src="public/icon.ico" alt="Metaplasma mark" />
+        <h1 class="logo" aria-label="Metaplasma">METAPLASMA</h1>
+      </div>
+      <p class="tagline">A Data-Driven Emergent Symbolic Systems Engine</p>
+      <nav class="nav">
+        <a href="index.html">home</a>
+        <a href="engine.html">engine</a>
+        <a href="relations.html">relations</a>
+        <a href="start.html" class="active">start</a>
+        <a href="docs.html">docs</a>
+      </nav>
+    </header>
+
+    <main class="content">
+      <section class="panel">
+        <h2>Prerequisites</h2>
+        <ul class="bullets">
+          <li><b>Python</b> 3.12+</li>
+          <li><b>Windows</b> (prototype), with terminal access</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Run the Terminal</h2>
+        <p>From the project directory:</p>
+        <pre class="console">
+> Terminal_Launcher.bat
+        </pre>
+        <p>
+          This launches <code>terminal.py</code>, displays the ASCII logo, and opens the interactive shell.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Folders</h2>
+        <ul class="bullets">
+          <li><code>ROOT/*</code>: engine defaults (read-only)</li>
+          <li><code>User/*</code>: project-specific content (overrides, writes)</li>
+          <li><code>Sigils/</code>, <code>Relations/</code>, <code>Scripts/</code>, <code>Commands/</code>, <code>Modules/</code></li>
+          <li><code>ROOT/Utilities/</code>: Windows tools (<code>.exe/.bat/.cmd/.ps1/.py</code>)</li>
+          <li><code>User/Logs/</code>: runtime pulse and change logs</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Next Steps</h2>
+        <ul class="links">
+          <li><a href="engine.html">Learn the engine</a></li>
+          <li><a href="relations.html">Browse the relation catalog</a></li>
+          <li><a href="docs.html">Read the docs</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="divider" aria-hidden="true">§§§</div>
+      <p class="credit">Hivemind Studio — David Cody</p>
+      <p>Metaplasma — built from symbols, shaped by relations.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
