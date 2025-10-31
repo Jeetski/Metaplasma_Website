@@ -13,6 +13,12 @@
       }
     });
   }
+  // Mobile nav toggle
+  const nav = document.querySelector('.nav');
+  const toggle = document.querySelector('.nav-toggle');
+  if (nav && toggle) {
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  }
   // j/k keyboard navigation across .panel sections
   document.addEventListener('keydown', (e) => {
     if (['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
