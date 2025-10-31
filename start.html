@@ -49,6 +49,60 @@
       </section>
 
       <section class="panel">
+        <h2>Create Your First Sigils</h2>
+        <p>Create <code>User/Sigils/room.yml</code> and <code>User/Sigils/hall.yml</code>:</p>
+        <pre class="console">
+sigil:
+  id: room
+  type: object
+  properties:
+    label: "Misty Room"
+  relations:
+    connected_to: ["@hall"]
+        </pre>
+        <pre class="console">
+sigil:
+  id: hall
+  type: object
+  properties:
+    label: "Long Hall"
+  relations: {}
+        </pre>
+      </section>
+
+      <section class="panel">
+        <h2>Define a Relation</h2>
+        <p>Create <code>User/Relations/connected_to.yml</code>:</p>
+        <pre class="console">
+sigil:
+  id: connected_to
+  type: relation
+  properties:
+    directed: false
+    symmetric: true
+    arity: 2
+    roles: [subject, subject]
+    category: association
+    script: Scripts/connected_to.py
+        </pre>
+        <p>(Optional) Create <code>User/Scripts/connected_to.py</code>:</p>
+        <pre class="console">
+def handle(pulse: dict, src: str, rel: str, dst: str, api) -> dict:
+    api.graph.set_property(dst, "visited", True)
+    return {"targets": None, "updates": {}, "emit": []}
+        </pre>
+      </section>
+
+      <section class="panel">
+        <h2>Emit a Pulse</h2>
+        <p>From the terminal, emit a pulse from <code>@room</code>:</p>
+        <pre class="console">
+> emit @room payload:{ step: 1 }
+        </pre>
+        <p>The pulse will traverse <code>connected_to</code> edges and mark <code>@hall</code> as visited via the relation script.</p>
+      </section>
+
+      <section class="panel">
         <h2>Folders</h2>
         <ul class="bullets">
           <li><code>ROOT/*</code>: engine defaults (read-only)</li>

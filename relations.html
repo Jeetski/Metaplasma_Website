@@ -51,6 +51,17 @@
               <li>between (arity 3); among (member,set)</li>
               <li>adjacent_to (sym); near (sym); far_from (sym)</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: in
+  type: relation
+  properties:
+    directed: true
+    inverse: contains
+    arity: 2
+    roles: [subject, container]
+    category: spatial_topology
+            </pre>
           </details>
 
           <details class="card"><summary><b>Spatial Motion / Path</b> — movement, pathing</summary>
@@ -60,6 +71,17 @@
               <li>toward ⇄ away_from; to ⇄ from</li>
               <li>past; via</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: into
+  type: relation
+  properties:
+    directed: true
+    inverse: out_of
+    arity: 2
+    roles: [subject, destination]
+    category: spatial_motion
+            </pre>
           </details>
 
           <details class="card"><summary><b>Orientation / Alignment</b> — direction, facing</summary>
@@ -67,6 +89,17 @@
               <li>aligned_with (sym); parallel_to (sym); perpendicular_to (sym)</li>
               <li>facing ⇄ faced_by; left_of ⇄ right_of; ahead_of ⇄ behind</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: aligned_with
+  type: relation
+  properties:
+    directed: false
+    symmetric: true
+    arity: 2
+    roles: [subject, subject]
+    category: orientation
+            </pre>
           </details>
 
           <details class="card"><summary><b>Structure</b> — part–whole, sets</summary>
@@ -76,6 +109,17 @@
               <li>subset_of ⇄ superset_of; version_of ⇄ has_version</li>
               <li>variant_of ⇄ has_variant; container_of ⇄ contained_by</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: part_of
+  type: relation
+  properties:
+    directed: true
+    inverse: has_part
+    arity: 2
+    roles: [part, whole]
+    category: structure
+            </pre>
           </details>
 
           <details class="card"><summary><b>Ownership / Control</b> — authority, assignment</summary>
@@ -84,6 +128,17 @@
               <li>responsible_to ⇄ responsible_for; governed_by ⇄ governs</li>
               <li>assigned_to ⇄ assigned_by</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: owned_by
+  type: relation
+  properties:
+    directed: true
+    inverse: owns
+    arity: 2
+    roles: [asset, owner]
+    category: control
+            </pre>
           </details>
 
           <details class="card"><summary><b>Association / Linkage</b> — attachment, connectivity</summary>
@@ -92,6 +147,17 @@
               <li>attached_to ⇄ detached_from; bound_to ⇄ unbound_from</li>
               <li>linked_to (sym); related_to (sym)</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: connected_to
+  type: relation
+  properties:
+    directed: false
+    symmetric: true
+    arity: 2
+    roles: [subject, subject]
+    category: association
+            </pre>
           </details>
 
           <details class="card"><summary><b>Causality / Process</b> — cause, enable, prevent</summary>
@@ -101,6 +167,17 @@
               <li>transforms_to ⇄ transforms_from; depends_on ⇄ required_by</li>
               <li>uses ⇄ used_by</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: causes
+  type: relation
+  properties:
+    directed: true
+    inverse: caused_by
+    arity: 2
+    roles: [cause, effect]
+    category: causality
+            </pre>
           </details>
 
           <details class="card"><summary><b>Temporal</b> — order, overlap</summary>
@@ -110,6 +187,17 @@
               <li>starts_at ⇄ started_by; ends_at ⇄ ended_by</li>
               <li>overlaps_in_time (sym); concurrent_with (sym)</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: before
+  type: relation
+  properties:
+    directed: true
+    inverse: after
+    arity: 2
+    roles: [precedent, subsequent]
+    category: temporal
+            </pre>
           </details>
 
           <details class="card"><summary><b>Agency / Means</b> — roles, instruments</summary>
@@ -118,6 +206,17 @@
               <li>with_instrument ⇄ instrument_of; via_method ⇄ method_of</li>
               <li>for_benefit_of ⇄ benefits_from; on_behalf_of ⇄ represented_by</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: with_instrument
+  type: relation
+  properties:
+    directed: true
+    inverse: instrument_of
+    arity: 2
+    roles: [agent, instrument]
+    category: agency
+            </pre>
           </details>
 
           <details class="card"><summary><b>Purpose / Function</b> — goals, capability</summary>
@@ -126,6 +225,17 @@
               <li>used_for ⇄ use_of; capable_of ⇄ capability_of</li>
               <li>suitable_for ⇄ suitability_of; about ⇄ topic_of</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: used_for
+  type: relation
+  properties:
+    directed: true
+    inverse: use_of
+    arity: 2
+    roles: [tool, purpose]
+    category: purpose
+            </pre>
           </details>
 
           <details class="card"><summary><b>Similarity / Comparison</b> — likeness, contrast</summary>
@@ -133,6 +243,17 @@
               <li>similar_to (sym); equivalent_to (sym); same_as (sym)</li>
               <li>different_from (sym); analog_to (sym)</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: similar_to
+  type: relation
+  properties:
+    directed: false
+    symmetric: true
+    arity: 2
+    roles: [subject, subject]
+    category: similarity
+            </pre>
           </details>
 
           <details class="card"><summary><b>Information</b> — reference, channel</summary>
@@ -141,6 +262,17 @@
               <li>from_source ⇄ source_of; to_audience ⇄ audience_of</li>
               <li>via_channel ⇄ channel_of; refers_to ⇄ referenced_by; defined_in ⇄ defines</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: about
+  type: relation
+  properties:
+    directed: true
+    inverse: topic_of
+    arity: 2
+    roles: [work, topic]
+    category: information
+            </pre>
           </details>
 
           <details class="card"><summary><b>Derivation / Transformation</b> — origin, mapping</summary>
@@ -148,6 +280,17 @@
               <li>derived_from ⇄ derives_to; based_on ⇄ base_of</li>
               <li>converted_from ⇄ converts_to; mapped_to ⇄ mapped_from</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: derived_from
+  type: relation
+  properties:
+    directed: true
+    inverse: derives_to
+    arity: 2
+    roles: [derivative, source]
+    category: derivation
+            </pre>
           </details>
 
           <details class="card"><summary><b>State / Constraint</b> — condition, permission</summary>
@@ -156,6 +299,17 @@
               <li>subject_to ⇄ governs_condition; compatible_with (sym); conflicts_with (sym)</li>
               <li>allowed_by ⇄ allows; prohibited_by ⇄ prohibits</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: in_state
+  type: relation
+  properties:
+    directed: true
+    inverse: state_of
+    arity: 2
+    roles: [entity, state]
+    category: state
+            </pre>
           </details>
 
           <details class="card"><summary><b>Identity / Taxonomy</b> — class, naming</summary>
@@ -163,6 +317,17 @@
               <li>is_a ⇄ instance_of; alias_of (sym); equivalent_to (sym)</li>
               <li>named_by ⇄ names</li>
             </ul>
+            <pre class="console">
+sigil:
+  id: is_a
+  type: relation
+  properties:
+    directed: true
+    inverse: instance_of
+    arity: 2
+    roles: [instance, archetype]
+    category: identity
+            </pre>
           </details>
         </div>
         <a class="back" href="#top">back to top</a>

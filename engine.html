@@ -67,6 +67,77 @@
           </svg>
         </div>
       </section>
+
+      <section class="panel">
+        <h2>Engine Deep Dive</h2>
+        <p>Metaplasma favors explicit, human-readable definitions. Below are canonical forms.</p>
+        <h3>Sigil (canonical)</h3>
+        <pre class="console">
+sigil:
+  id: room
+  type: object
+  properties:
+    label: "Misty Room"
+    mood: calm
+  relations:
+    connected_to: ["@hall"]
+        </pre>
+        <h3>Relation Type</h3>
+        <pre class="console">
+sigil:
+  id: connected_to
+  type: relation
+  properties:
+    directed: false           # symmetric
+    symmetric: true
+    arity: 2
+    roles: [subject, object]
+    category: association
+    script: Scripts/connected_to.py  # optional edge handler
+        </pre>
+        <h3>Relation Instance (reified)</h3>
+        <pre class="console">
+sigil:
+  id: transfer_001
+  type: relation_instance
+  properties:
+    relation: "@transforms_to"
+    roles:
+      subject: "@water"
+      object:  "@steam"
+    timestamp: "2025-01-01T12:00:00Z"
+    tags: ["chemistry", "phase"]
+  relations:
+    instance_of: ["@transforms_to"]
+        </pre>
+        <h3>Pulse Script (Python)</h3>
+        <pre class="console">
+def handle(pulse: dict, src: str, rel: str, dst: str, api) -> dict:
+    # Example: mark the destination as "visited" and continue
+    api.graph.set_property(dst, "visited", True)
+    return {
+        "targets": None,   # follow default: all outgoing from dst
+        "updates": {},     # or {dst: {"visited": True}}
+        "emit": []
+    }
+        </pre>
+        <h3>Minimal Runtime API</h3>
+        <pre class="console">
+# graph
+api.graph.get_sigil(id)
+api.graph.set_property(id, key, value)
+api.graph.neighbors(id, rel=None)
+api.graph.add_relation(a, rel, b)
+api.graph.remove_relation(a, rel, b)
+
+# pulse
+await api.pulse.emit(origin, payload={})
+
+# resolve / meta
+api.resolve.resolve_ref("@room:label")
+api.meta.log("info", "hello")
+        </pre>
+      </section>
       <section class="panel">
         <h2>Core Primitives</h2>
         <ul class="bullets">
